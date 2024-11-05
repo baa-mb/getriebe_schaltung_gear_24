@@ -12,6 +12,12 @@ input.onButtonPressed(Button.A, function () {
     pins.servoWritePin(AnalogPin.P1, wlist[pos])
     basic.showNumber(pos)
 })
+
+input.onButtonPressed(Button.B, function () {
+    pins.servoWritePin(AnalogPin.P0, speed)
+    pos = 3
+    pins.servoWritePin(AnalogPin.P1, wlist[pos])
+})
 input.onButtonPressed(Button.AB, function () {
     on_off = !(on_off)
     if (on_off) {
@@ -41,20 +47,16 @@ radio.onReceivedString(function (receivedString) {
         )
     }
 })
-input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P0, speed)
-    pos = 3
-    pins.servoWritePin(AnalogPin.P1, wlist[pos])
-})
+radio.setGroup(24)
 let richtg = 0
 let on_off = false
-radio.setGroup(24)
+
 let winkel = 0
-let pos = 0
+
 let speed = 0
 let wlist: number[] = []
-radio.setGroup(7)
-pos = 0
+
+let pos = 1
 on_off = true
 speed = 120
 richtg = 1
@@ -62,8 +64,8 @@ wlist = [
 0,
 90,
 180,
-135
+180
 ]
-let lauf = 1
-pins.servoWritePin(AnalogPin.P0, 90)
-pins.servoWritePin(AnalogPin.P1, wlist[pos])
+
+// pins.servoWritePin(AnalogPin.P0, 90)
+// pins.servoWritePin(AnalogPin.P1, wlist[pos])
