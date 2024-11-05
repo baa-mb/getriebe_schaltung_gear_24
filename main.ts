@@ -50,9 +50,7 @@ radio.onReceivedString(function (receivedString) {
 radio.setGroup(24)
 let richtg = 0
 let on_off = false
-
 let winkel = 0
-
 let speed = 0
 let wlist: number[] = []
 
